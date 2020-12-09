@@ -29,6 +29,6 @@ def echo_all(message):
 			if (message.text in str(row[1])) or (message.text.lower() in str(row[1])) or (message.text.upper() in str(row[1])) or (message.text.capitalize() in str(row[1])):
 				answer = f'''{row[1]}\n\n{row[2]}'''
 				bot.send_message(cid, answer, reply_markup=markup)
-				print(answer)
+				print(cid, ', ', message.from_user.username, ': ', answer)
 
 bot.polling()
