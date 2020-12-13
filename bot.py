@@ -21,7 +21,7 @@ def echo_all(message):
 
 	if message.text == 'Скинь документ':
 		doc = open('psih.docx', 'rb')
-		print(cid)
+		print(cid, '-> document')
 		bot.send_document(cid, doc, reply_markup=markup)
 
 	else:
