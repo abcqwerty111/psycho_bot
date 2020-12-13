@@ -29,7 +29,7 @@ def echo_all(message):
 		cur = con.cursor()
 		for row in cur.execute('SELECT * FROM answers'):
 			if (message.text in str(row[1])) or (message.text.lower() in str(row[1])) or (message.text.upper() in str(row[1])) or (message.text.capitalize() in str(row[1])):
-				bot.send_message(cid, answer, reply_markup=markup)
+				bot.send_message(cid, f'{row[1]}\n\n{row[2]}', reply_markup=markup)
 				print(f'{cid}, {message.from_user.username}: {row[1]} --> {row[2]}')
 
 bot.polling()
