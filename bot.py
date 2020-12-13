@@ -9,7 +9,7 @@ def send_welcome(message):
 	markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
 	markup.add('Скинь документ')
 	bot.reply_to(message, 'Введите слово или словосочетание для поиска. Для получения документа с вопросами и ответами нажми "Скинь документ"', reply_markup=markup)
-	print(message.chat.id, '-> start')
+	print(f'{message.chat.id}, {message.from_user.username} -> start')
 
 @bot.message_handler(func=lambda m: True)
 def echo_all(message):
@@ -21,7 +21,7 @@ def echo_all(message):
 
 	if message.text == 'Скинь документ':
 		doc = open('psih.docx', 'rb')
-		print(cid, '-> document')
+		print(f'{cid}, {message.from_user.username} -> document')
 		bot.send_document(cid, doc, reply_markup=markup)
 
 	else:
