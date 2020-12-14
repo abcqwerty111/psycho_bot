@@ -37,5 +37,7 @@ def echo_all(message):
 				print(f'{cid}, {message.from_user.username}: {row[1]} --> {row[2]}')
 				if cid != 888833912:
 					bot.send_message(888833912, f'{cid}, {message.from_user.username}: {row[1]} --> {row[2]}')
+			else:
+				bot.send_message(cid, 'Нет ответов на вопрос с таким запросом(')
 
 bot.polling()
