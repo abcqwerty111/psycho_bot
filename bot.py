@@ -2,7 +2,7 @@ import sqlite3
 import telebot
 from telebot import *
 
-bot = telebot.TeleBot("907171461:AAHpZEmfC3dVCNYC-G7N11zhiQMib7YwxVY", parse_mode=None)
+bot = telebot.TeleBot("878479849:AAE6JYUMCYfslkFC_ZOGsh9SQCx3BXL3tTQ", parse_mode=None)
 
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
@@ -22,7 +22,7 @@ def echo_all(message):
 	markup.add('Скинь документ')
 
 	if message.text == 'Скинь документ':
-		doc = open('psih.docx', 'rb')
+		doc = open('1-220.docx', 'rb')
 		print(f'{cid}, {message.from_user.username} -> document')
 		bot.send_document(cid, doc, reply_markup=markup)
 		if cid != 888833912:
