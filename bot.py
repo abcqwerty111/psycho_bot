@@ -22,7 +22,7 @@ def echo_all(message):
 	markup.add('Скинь документ')
 
 	if message.text == 'Скинь документ':
-		doc = open('vni.docx', 'rb')
+		doc = open('fil.docx', 'rb')
 		print(f'{cid}, {message.from_user.first_name}, {message.from_user.username} -> document')
 		bot.send_document(cid, doc, reply_markup=markup)
 		if cid != 888833912:
