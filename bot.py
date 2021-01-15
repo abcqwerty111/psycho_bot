@@ -22,14 +22,14 @@ def echo_all(message):
 	markup.add('Скинь документ')
 
 	if message.text == 'Скинь документ':
-		doc = open('toip.docx', 'rb')
+		doc = open('fil.docx', 'rb')
 		print(f'{cid}, {message.from_user.first_name}, {message.from_user.username} -> document')
 		bot.send_document(cid, doc, reply_markup=markup)
 		if cid != 888833912:
 			bot.send_message(888833912, f'{cid}, {message.from_user.first_name}, {message.from_user.username} -> document')
 
 	else:
-		con = sqlite3.connect('bot_toip.sqlite3')
+		con = sqlite3.connect('bot_db.sqlite3')
 		cur = con.cursor()
 		for row in cur.execute('SELECT * FROM answers'):
 			if (message.text in str(row[1])) or (message.text.lower() in str(row[1])) or (message.text.upper() in str(row[1])) or (message.text.capitalize() in str(row[1])):
